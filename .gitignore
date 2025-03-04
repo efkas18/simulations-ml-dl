@@ -1,0 +1,20 @@
+# Folders - Files
+__pycache__
+.ipynb_checkpoints
+.pytest_cache
+.idea
+.DS_Store
+
+# Virtual Environment
+/venv
+.venv
+.env
+
+# Databases
+instance/
+
+# Datasets
+datasets
+dataset
+ml-100k
+ml-1m
