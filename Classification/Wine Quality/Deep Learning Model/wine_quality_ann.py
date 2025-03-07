@@ -15,8 +15,8 @@ X = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, -1].values
 
 ## Encoding categorical data
-### Represents the seperation to 'good' or 'bad' binary categories or evaluation by score.
-### If value is equal to '0', then will be made a score seperation above 6.5 or less.
+### Represents the separation to binary categories ('good' or 'bad' quality) or evaluation by score degree.
+### If value is equal to '0', then will be made a score separation above 6.5 or less.
 ### From the other hand a precision score implementation will be adopt.
 implementation = 0
 if implementation == 0:
@@ -33,7 +33,7 @@ else:
     loss = 'categorical_crossentropy'
     output_units = len(np.unique(y))
 
-    ### Change shape of target array, because need to be vertical and not horizontal 1d array for encoding.
+    ### Changes shape of target array, because need to be vertical and not horizontal 1d array for encoding.
     y = y.reshape(-1, 1)
     
     ### Encoding categorical data.

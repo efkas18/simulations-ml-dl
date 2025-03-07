@@ -9,8 +9,8 @@ dataset = pd.read_csv("dataset/winequality-white.csv", delimiter = ';')
 X = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, -1].values
 
-### Represents the seperation to 'good' or 'bad' binary categories or evaluation by score.
-### If value is equal to '0', then will be made a score seperation above 6.5 or less.
+### Represents the separation to binary categories ('good' or 'bad' quality) or evaluation by score degree.
+### If value is equal to '0', then will be made a score separation above 6.5 or less.
 ### From the other hand a precision score implementation will be adopt.
 implementation = 0
 if implementation == 0:
