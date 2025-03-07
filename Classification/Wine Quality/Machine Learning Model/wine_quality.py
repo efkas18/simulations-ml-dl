@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 
 ## Importing Dataset.
-dataset = pd.read_csv("winequality-white.csv", delimiter = ';')
+dataset = pd.read_csv("dataset/winequality-white.csv", delimiter = ';')
 X = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, -1].values
 
@@ -71,10 +71,10 @@ for name, model in models.items():
     
     results.append({
         "model": name,
-        "accuracy": round(accuracy, 4),
-        "f1-Score": round(f1, 4),
-        "precision": round(precision, 4),
-        "recall": round(recall, 4),
+        "accuracy": round(accuracy, 2),
+        "f1-Score": round(f1, 2),
+        "precision": round(precision, 2),
+        "recall": round(recall, 2),
     })
     
 df_results = pd.DataFrame(results)
