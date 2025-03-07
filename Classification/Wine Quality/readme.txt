@@ -44,3 +44,22 @@ Input variables (based on physicochemical tests):
 Output variable (based on sensory data): 
 
    12 - quality (score between 0 and 10)
+
+
+=======================================================================================
+======== Simulation Instructions ========
+
+Regarding "Wine Quality" simulations, there are two approaches, machine learning and deep learning.
+At both scenarios inside the code there is a specific variable "implementation", which separates the 
+implementation user wants to execute.
+If implementation is equal to '0', then will be executed "Binary Classification", by separating targets
+to those are above 6.5 (good quality) and those are below (bad quality). In this case both ANN and Machine Learning models, success testing accuracy around 90%.
+From the other hand, if implementation is not equal to '0', then the "Categorical Classification" will be selected,
+which will present significant lower testing accuracy to 65%.
+
+
+
+
+
+
+

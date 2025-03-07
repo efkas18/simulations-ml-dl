@@ -9,6 +9,19 @@ dataset = pd.read_csv("dataset/winequality-white.csv", delimiter = ';')
 X = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, -1].values
 
+### Represents the seperation to 'good' or 'bad' binary categories or evaluation by score.
+### If value is equal to '0', then will be made a score seperation above 6.5 or less.
+### From the other hand a precision score implementation will be adopt.
+implementation = 0
+if implementation == 0:
+    temp_v = []
+    for i in range(y.shape[0]):
+        if y[i] > 6.5:
+            temp_v.append(1)
+        else:
+            temp_v.append(0)
+    y = np.array(temp_v)
+
 ## Split data to Training and Testing datasets.
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25, random_state = 0)
@@ -42,10 +55,10 @@ def rfc():
     
     return y_pred_rf
 
-# Defines models and passes some basic parameters for each model.    
+# Defines models and passes some basic parameters for each model.
 models = {
     "Logistic Regression": LogisticRegression(),
-    "K-Neighbours Classifier": KNeighborsClassifier(n_neighbors = 5, metric = 'minkowski', p = 2, n_jobs = -1),
+    "K-Neighbours Classifier": KNeighborsClassifier(n_neighbors = len(np.unique(y)), metric = 'minkowski', p = 2, n_jobs = -1),
     "Support Vector Classifier": SVC(C = 1, gamma = 0.1),
     "Gaussian Naive Bayes": GaussianNB(),
     "Decision Tree Classifier": DecisionTreeClassifier(criterion = 'entropy'),
@@ -79,7 +92,7 @@ for name, model in models.items():
     
 df_results = pd.DataFrame(results)
 
-# Initialize best_model dictionary
+# Initializes dictionary in order to reveal the best model implementation.
 best_model = {
     'model': '',
     'accuracy': 0.0
@@ -93,4 +106,4 @@ for index, row in df_results.iterrows():
         best_model['model'] = model
         best_model['accuracy'] = accuracy
         
-print(f"Best model is {best_model['model']} with accuracy {best_model['accuracy'] * 100}%")
+print(f"Best model is {best_model['model']} with accuracy {round(best_model['accuracy'] * 100, 2)}%")
