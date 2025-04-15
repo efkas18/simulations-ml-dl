@@ -1,7 +1,5 @@
-# Simulations
-
 ## Description
-#### In this repository someone can find simulations from different case studies, based on well known datasets for machine/deep learning.
+In this repository someone can find simulations from different case studies, based on well known datasets for machine/deep learning.
 
 ## Databases
 > 1. https://www.kaggle.com
