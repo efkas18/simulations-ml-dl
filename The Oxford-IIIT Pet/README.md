@@ -1,4 +1,4 @@
-===== The Oxford-IIIT Pet Dataset =====
+# The Oxford-IIIT Pet Dataset
 
 This is a Convolution Neural Network model for experiment into the 'The Oxford-IIIT Pet Dataset' case study.
 The purpose of model is to evaluate if an image represents a cat or dog by binary classification (cnn_binary.py).

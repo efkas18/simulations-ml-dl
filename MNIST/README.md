@@ -1,4 +1,4 @@
-MNIST - Modified National Institute of Standards and Technology
+# MNIST - Modified National Institute of Standards and Technology
 
 An execution of 10000 observations as input for training and 20000 as testing (evaluation) dataset.
 Categorial case with 10 possible classes and 784 features.
