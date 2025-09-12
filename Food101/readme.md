@@ -2,8 +2,8 @@
 
 ## Description
 Based on **Food101** model of https://www.kaggle.com/datasets/dansbecker/food-101 .
-Dataset is a variation of original dataset from kaggle. Consist of 7500 images for training and 2500 images for validation.
-All images of training and testing datasets are equally distributed at 10 labels (categories).
+Dataset is a variation of original dataset from kaggle. Consists of 7500 training images and 2500 testing images.
+All images of training and testing datasets are equally distributed into 10 labels (categories).
 
 A Convolution Neural Network used based on **Functional API** of **tensorflow.keras.applications** module and particularly 
 the **EfficientNetV2B0** architecture.
@@ -21,7 +21,7 @@ The same methedology was excecuded, by creating a base model with Functional API
 After simulations of each model a visualisation following by plots of loss and accuracy curves and comparison of model of model before and after feature extraction / fine-tuning.
 
 ## Notes
-1. The script can be used on different datasets, but the dataset of images must be as the structure will follow:
+1. The script can be used on different datasets, but the distribution of directories and images must have the following structure:
    * root (dataset_directory)
      * train 
        * label_1 (directory contains images representing object of label_1)
@@ -34,6 +34,6 @@ After simulations of each model a visualisation following by plots of loss and a
        * ...
        * label_N (directory contains images representing object of label_N)
 2. The cell which proceeds to download the dataset for simulations, can be commented after the download. Furthermore, the URL of !wget command can be replaced with your own. Note that if the downloaded dataset is not as the structure explained at **Note 1**, then it is necessary to modified it !
-3. In order to run at resonable time the model, it is necessary a system with **NVIDIA GPU**, because the tensor oparations are a lot for CPU to handle them.
+3. A reasonable running time could be successed by using **NVIDIA GPU**, because operations with tensors are heavily time consuming process for a CPU.
 
 
